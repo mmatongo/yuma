@@ -35,8 +35,10 @@ func main() {
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./ui/static"))))
 	mux.HandleFunc("/", a.handleBlogPost)
 
+	port := os.Getenv("PORT")
+
 	srv := &http.Server{
-		Addr:     ":8080",
+		Addr:     ":" + port,
 		Handler:  mux,
 		ErrorLog: a.errorLog,
 	}
@@ -47,7 +49,7 @@ func main() {
 		}
 	}()
 
-	a.infoLog.Println("Server starting at :8080")
+	a.infoLog.Printf("Server starting at port %s", port)
 	err := srv.ListenAndServe()
 	if err != nil {
 		a.errorLog.Fatal("ListenAndServe: ", err)
