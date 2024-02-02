@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
+	"gopkg.in/yaml.v3"
 )
 
 func (a *app) initURLToFileMap() {
@@ -119,5 +120,17 @@ func updateURLToFileMap(filePath string) {
 		delete(urlToFileMap, urlPath)
 	} else {
 		urlToFileMap[urlPath] = filePath
+	}
+}
+
+func (a *app) initConfig() {
+	config, err := os.ReadFile("config/config.yml")
+	if err != nil {
+		a.errorLog.Fatalf("Error reading config file: %v", err)
+	}
+	err = yaml.Unmarshal(config, &a.config)
+
+	if err != nil {
+		a.errorLog.Fatalf("Error unmarshalling config file: %v", err)
 	}
 }
