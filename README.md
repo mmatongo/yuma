@@ -32,3 +32,13 @@ ui/static/_images/
 ```
 
 All other directories and files are MIT Licensed (where applicable).
+
+
+## TODO
+- [] Footer
+- [] Notes
+- [] Recent Posts
+- [] Tags
+- [] Recursive directory listing (for notes and posts)
+- [] Home page
+- [] Asset compression
