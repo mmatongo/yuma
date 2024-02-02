@@ -16,6 +16,9 @@ func (a *app) handleBlogPost(w http.ResponseWriter, r *http.Request) {
 	mapMutex.RLock()
 	filePath, ok := urlToFileMap[path]
 	mapMutex.RUnlock()
+
+	w.Header().Set("Permission-Policy", "unload()")
+
 	if !ok {
 		http.NotFound(w, r)
 		return
