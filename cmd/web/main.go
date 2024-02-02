@@ -11,9 +11,13 @@ import (
 )
 
 var (
-	urlToFileMap = make(map[string]string)
-	tmpl         = template.Must(template.ParseFiles("ui/templates/base.layout.gohtml"))
-	mapMutex     = &sync.RWMutex{}
+	urlToFileMap  = make(map[string]string)
+	templateFiles = []string{
+		"./ui/templates/base.layout.gohtml",
+		"./ui/templates/footer.partial.gohtml",
+	}
+	tmpl     = template.Must(template.ParseFiles(templateFiles...))
+	mapMutex = &sync.RWMutex{}
 )
 
 type app struct {
