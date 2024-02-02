@@ -1,0 +1,19 @@
+<!-- ui/templates/index.page.html -->
+{{define "index"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{template "header" .}}
+    <body>
+        <main>
+            {{template "nav" .}}
+            <h2>Blog Posts</h2>
+            <ul>
+                {{range .Posts}}
+                <li><a href="/_posts/{{.URL}}">{{.Title}}</a></li>
+                {{end}}
+            </ul>
+        </main>
+        {{template "footer" .}}
+    </body>
+    </html>
+{{end}}

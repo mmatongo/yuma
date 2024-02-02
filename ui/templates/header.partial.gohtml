@@ -1,0 +1,30 @@
+<!-- ui/templates/header.partial.html -->
+{{define "header"}}
+<header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport">
+        <meta name="description" content="Daniel's musings.">
+        <meta content=".dm - Daniel M. Matongo" property="og:title">
+        <meta content="Daniel's musings." name="description">
+        <meta content="website" property="og:type">
+        <title>{{ .Title }}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/monokai.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <link rel="stylesheet" href="/static/css/dnlm.css">
+    </head>
+    <div class="logo-container">
+       <svg class="logo" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>.dm</title>
+            <text x="10" y="50" font-family="Arial" font-size="250" fill="#cccccc">.dm</text>
+        </svg>
+    </div>
+    <h1 class="h1">
+        <span lang="en">{{.Name}}</span>
+    </h1>
+    <div class="desc" lang="en"><span data-status-text="">{{.StatusText}}</span> <span data-status-datetime="">{{.StatusDateTime}}</span></div>
+    <div class="desc"></div>
+{{end}}

@@ -1,19 +1,7 @@
-<!-- ui/templates/layout.html -->
+<!-- ui/templates/base.layout.html -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content=".dm - Daniel M. Matongo" property="og:title">
-        <meta content="Daniel's musings." name="description">
-        <meta content="website" property="og:type">
-        <title>{{ .Title }}</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/monokai.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
-        <link rel="stylesheet" href="/static/css/dnlm.css">
-    </head>
+    {{ template "header" .}}
     <body>
       <main>
           {{ .Content }}

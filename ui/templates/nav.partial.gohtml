@@ -1,0 +1,23 @@
+<!-- ui/templates/nav.partial.html -->
+{{define "nav"}}
+<p>
+    A software developer, lover of ruby, and a fan of open source.
+</p>
+<p>
+    Based in Bath where it's currently {{.Time}}.
+</p>
+<nav aria-label="Additional content">
+    <a href="/pages/qna">Q&amp;A</a><hr class="inline-hr">
+    <a href="/pages/blogroll">Blogroll</a><hr class="inline-hr">
+    <a href="/pages/issues">Issues</a>
+</nav>
+<nav aria-label="Social">
+    <a href="https://github.com/mmatongo" rel="me">GitHub</a><hr class="inline-hr">
+    <a href="https://read.cv/mmatongo" rel="me">Read.cv</a><hr class="inline-hr">
+    <a href="mailto: {{.Email}}" rel="me">Email</a>
+</nav>
+<hr class="hr">
+<h2 class="text">Yuma</h2>
+<a href="/stories.xml" class="styled-link">RSS</a>
+<a href="https://github.com/mmatongo/yuma" class="styled-link">What is this?</a>
+{{end}}
